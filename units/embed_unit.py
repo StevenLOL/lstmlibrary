@@ -11,8 +11,7 @@ class EmbedUnit():
     @staticmethod
     def forward(model, input):
         W = model['W']
-        prod = input.dot(W)
-        return prod
+        return W[input]
 
     @staticmethod
     def backward(model, input, diff):

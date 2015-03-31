@@ -1,7 +1,7 @@
 from utils import functions
 import numpy as np
 
-class LSTMEncoderUnit:
+class LSTMUnit:
    """ A single unit in a LSTM encoder layer """
    @staticmethod
    def init(input_size, hidden_size):

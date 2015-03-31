@@ -24,6 +24,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="networks\lstm_encoder_decoder.py" />
+    <Compile Include="networks\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="units\embed_unit.py">
       <SubType>Code</SubType>
     </Compile>
@@ -40,8 +44,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LSTMLibrary.py" />
-    <Compile Include="units\lstm_decoder_unit.py" />
-    <Compile Include="units\lstm_encoder_unit.py">
+    <Compile Include="units\lstm_unit.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="units\__init__.py">
@@ -72,9 +75,21 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>Amd64</Architecture>
     </Interpreter>
+    <Interpreter Include="Z:\Desktop\PythonCaffe\WebCaffe\caffeEnv64\">
+      <Id>{07b17867-ab96-4a5e-a1f5-32591f1328df}</Id>
+      <BaseInterpreter>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</BaseInterpreter>
+      <Version>2.7</Version>
+      <Description>caffeEnv64 (Python 64-bit 2.7)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <LibraryPath>Lib\</LibraryPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>Amd64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="layer\" />
+    <Folder Include="networks\" />
     <Folder Include="units\" />
     <Folder Include="utils\" />
   </ItemGroup>
