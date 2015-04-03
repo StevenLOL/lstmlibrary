@@ -12,7 +12,7 @@
     <OutputPath>.</OutputPath>
     <Name>LSTMLibrary</Name>
     <RootNamespace>LSTMLibrary</RootNamespace>
-    <InterpreterId>{c44ff241-a65f-4fb2-9494-797ae1500720}</InterpreterId>
+    <InterpreterId>{07b17867-ab96-4a5e-a1f5-32591f1328df}</InterpreterId>
     <InterpreterVersion>2.7</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">

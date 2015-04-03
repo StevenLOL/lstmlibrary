@@ -19,9 +19,16 @@ Yi = range(5, 12)
 encoder_decoder = LSTMEncoderDecoder(input_vocab_size, output_vocab_size, input_embed_size, input_embed_size,
                                      num_layers, num_memory_units)
 
-res, error = encoder_decoder.forward(Xi, Yi)
+# res, error = encoder_decoder.forward(Xi, Yi)
+predictions = encoder_decoder.predict(Xi, beam_size = 3)
 
-print("Size of results: {0}".format(len(res)))
-print("DONE")
+for predList in predictions:
+    logProb = predList[0]
+    prediction = predList[1]
+    print("Log probability is: {0}".format(logProb))
+    print("Prediction is: {0}".format(prediction))
+
+
+
 
 
