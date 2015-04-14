@@ -16,11 +16,16 @@ class SoftmaxUnit():
         return output
 
     @staticmethod
-    def backward(model, input, diff):
+    def backward(model, hidden, prob, Y):
         W = model['W']
-        deltaW = np.zeros_like(W)
-        for j in range(0, len(diff)):
-            for i in range(0, len(input)):
-                res = -input[i] * diff[j]
-                deltaW[i][j] += res
-        return deltaW
+
+        # First compute loss
+        dl_dz = Y - prob
+
+        # Then compute gradient of loss wrt weights
+        gradDw = np.outer(dl_dz, hidden)
+        model['dW'] += gradW
+
+        # Then compute loss with respect to hidden activations
+        dl_dh = W * dl_dz
+        return dl_dh

@@ -21,6 +21,10 @@ def initw(n,d): # initialize matrix of this size
   magic_number = 0.1
   return (np.random.rand(n,d) * 2 - 1) * magic_number # U[-0.1, 0.1]
 
+def initb(n): # initialize matrix of this size
+  magic_number = 0.1
+  return (np.random.rand(n) * 2 - 1) * magic_number # U[-0.1, 0.1]
+
 def accumNpDicts(d0, d1):
   """ forall k in d0, d0 += d1 . d's are dictionaries of key -> numpy array """
   for k in d1:

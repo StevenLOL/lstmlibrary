@@ -26,7 +26,7 @@ class LSTMDecoder(object):
         # Need an embedding model to map word indices to vectors
         self.embed_model = EmbedUnit.init(num_output, num_input)
 
-    def forward(self, x_init, h_init, c_init, Yi):
+    def forward(self, x_init, h_init, c_init, Yi, backprop = False):
         """ Feed forwards the input and convert it into a readable sequence
         @param h_init: Array of hidden units from layers of encoding lstm
         @param c_init: Array of cell states from layers of encoding lstm
@@ -92,6 +92,15 @@ class LSTMDecoder(object):
             cell_states = next_cell_states
 
         return output_states
+
+    def backward(self, hidden, pred, Y):
+        """ Computes a backward pass to calculate all the gradients of the decoder LSTM """
+        # First compute backward pass from softmax activation
+        delta_h = SoftmaxUnit.backward(self.output_model, hidden, pred, Y)
+        delta_c = np.zeros(self.num_hidden)
+
+        
+
 
     def predict(self, x_init, h_init, c_init, beam_size):
         """ Predicts the output sequence and returns a list of predictions 

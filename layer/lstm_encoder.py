@@ -24,7 +24,7 @@ class LSTMEncoder(object):
         self.input_model = LSTMUnit.init(num_input, num_hidden)
         self.hidden_model = LSTMUnit.init(num_hidden, num_hidden)
 
-    def forward(self, Xi):
+    def forward(self, Xi, backprop = False):
         """ Feed forwards the input and convert it into a fixed-size feature vector 
         @param Xi: Input sequence to feedforward 
         @return: An array of hidden and cell states starting from the 0th to n-1th layer """
@@ -87,6 +87,9 @@ class LSTMEncoder(object):
             tot_cell_states.append(cell_state)
 
         return tot_hidden_states, tot_cell_states,
+
+    def backward(self, losses):
+        """Do a backprop pass on the lstm graph """
 
 
 
